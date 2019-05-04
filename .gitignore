@@ -1,0 +1,20 @@
+### IntelliJ IDEA
+.idea
+*.iml
+*.ipr
+
+## IntelliJ
+out/
+
+### User specific stuff
+/.idea/workspace.xml
+/.idea/libraries
+
+### Java
+*.class
+
+### MacOS
+# General
+.DS_Store
+.AppleDouble
+.LSOverride

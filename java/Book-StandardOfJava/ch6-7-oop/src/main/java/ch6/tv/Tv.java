@@ -1,4 +1,4 @@
-package ch6.Tv;
+package ch6.tv;
 
 public class Tv {
     // 멤버변수

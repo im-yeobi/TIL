@@ -1,10 +1,10 @@
-package ch6.Tv;
+package ch6.tv;
 
 
 public class TvTest {
     public static void main(String[] args) {
         Tv t;               // 참조변수 t 선언 => 메모리에 참조변수 t를 위한 공간 마련.
-        t = new Tv();       // 인스턴스 생성 => 연산자 new로 인해 Tv 클래스의 인스턴스가 메모리의 빈 공간에 생성.
+        t = new Tv();       // 인스턴스 생성 => 연산자 new로 인해 tv 클래스의 인스턴스가 메모리의 빈 공간에 생성.
         t.channel = 7;
         t.channelDown();
         System.out.println("현재 채널은 " + t.channel + " 입니다.");

@@ -18,3 +18,10 @@ out/
 .DS_Store
 .AppleDouble
 .LSOverride
+
+### Gradle
+.gradle
+gradlew
+gradlew.bat
+gradle/wrapper
+gradle

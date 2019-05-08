@@ -1,27 +1,40 @@
-### IntelliJ IDEA
+### IntelliJ IDEA ###
 .idea
+*.iws
 *.iml
 *.ipr
+/out/
+HELP.md
 
-## IntelliJ
-out/
-
-### User specific stuff
+### User specific stuff ###
 /.idea/workspace.xml
 /.idea/libraries
 
-### Java
+### Java ###
 *.class
 
-### MacOS
+### MacOS ###
 # General
 .DS_Store
 .AppleDouble
 .LSOverride
 
-### Gradle
+### Gradle ###
 .gradle
 gradlew
 gradlew.bat
 gradle/wrapper
 gradle
+/build/
+
+### VS Code ###
+.vscode/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache

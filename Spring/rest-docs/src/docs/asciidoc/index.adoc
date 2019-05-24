@@ -1,0 +1,41 @@
+ifndef::snippets[]
+:snippets: /build/generated-snippets
+endif::[]
+= RESTful API Guide
+yeobi;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 3
+:sectlinks:
+
+[[introduction]]
+== 소개
+
+[[common]]
+== API Guide 샘플
+
+== Book API
+
+[[book-add]]
+=== 단건 조회
+책 데이터 단건으로 조회하는 API.
+
+==== Request
+
+include::{snippets}/get-a-book/path-parameters.adoc[]
+
+===== Request HTTP Example
+
+include::{snippets}/get-a-book/http-request.adoc[]
+
+==== Response
+
+include::{snippets}/get-a-book/response-fields.adoc[]
+
+===== Response HTTP Example
+
+include::{snippets}/get-a-book/http-response.adoc[]
+
+&#160;

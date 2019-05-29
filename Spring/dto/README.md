@@ -28,3 +28,10 @@ form 에서 name 필드 값을 프로퍼티에 맞춰서 값을 다른 페이지
 #### \# 정리
 - DTO/VO의 사용을 명확하게 구분하기보다는, 개발자들과의 협의를 통해 일관된 방법을 사용하는 것이 좋을 것 같다. 
 - 일반적으로, 외부 시스템과 데이터 통신을 할 경우 DTO, DB에서 가져오는 데이터는 VO로 정의해서 사용.
+
+
+<br />
+
+### References.
+- [DTO와 VO란?](https://mommoo.tistory.com/61)
+- [VO vs DTO](https://ijbgo.tistory.com/9)

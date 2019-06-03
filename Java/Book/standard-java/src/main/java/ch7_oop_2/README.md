@@ -137,3 +137,13 @@ import java.lang.Math.random();
 
 System.out.println(random());
 ````
+
+#### \# 제어자 (modifier)
+- 클래스, 변수 또는 메서드의 선언부에 함께 사용되어 부가적인 의미를 부여한다.
+- 접근 제어자
+>- public, protected, default, private
+- 그 외 제어자
+>- static, final, abstract, native, transient, synchronized, volatile, strictfp
+- 접근 제어자 한 번에 네 가지 중 하나만 선택해서 사용할 수 있다. 제어자들 간의 순서는 관계없지만 주로 접근 제어자를 제일 왼쪽에 놓는 경향이 있다.
+
+

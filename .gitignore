@@ -26,6 +26,7 @@ gradlew.bat
 gradle/wrapper
 gradle
 build/
+settings.gradle
 
 ### VS Code ###
 .vscode/

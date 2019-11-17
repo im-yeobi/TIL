@@ -3,37 +3,22 @@
 
 <br />
 
-
-
 ## Contents
 
-### 1. Java
-
-> [**OOP** 1](https://github.com/im-yeobi/TIL/tree/master/Java/Book/standard-java/src/main/java/ch6_oop_1)
->
-> - 자바의 정석 Chapter 6. 객체지향언어 1
->
-> [**OOP** 2](https://github.com/im-yeobi/TIL/tree/master/Java/Book/standard-java/src/main/java/ch7_oop_2)
->
-> - 자바의 정석 Chapter 7. 객체지향언어 2
-
-
+### 1. [Java](https://github.com/im-yeobi/TIL/tree/master/Java)
+- [자바의 정석](https://github.com/im-yeobi/TIL/tree/master/Java/Book/Standard_of_Java)
+>- [객체지향 프로그래밍 1](https://github.com/im-yeobi/TIL/blob/master/Java/Book/Standard_of_Java/Ch06_oop_1.md)
+>- [객체지향 프로그래밍 2](https://github.com/im-yeobi/TIL/blob/master/Java/Book/Standard_of_Java/Ch07_oop_2.md)
 
 ---
 
-
-
-### 2. Spring
-
-
+### 2. [Spring](https://github.com/im-yeobi/TIL/tree/master/Spring)
+- [Builder 패턴](https://github.com/im-yeobi/TIL/blob/master/Spring/Builder.md)
+- [DTO](https://github.com/im-yeobi/TIL/blob/master/Spring/DTO.md)
 
 ---
 
-
-
-### 3. AWS
-
-> [**AWS**](https://github.com/im-yeobi/TIL/blob/master/AWS/aws.md)
->
-> - AWS란 무엇인가 ?
+### 3. [AWS](http://github.com/im-yeobi/TIL/tree/master/AWS)
+- [AWS란 무엇인가](https://github.com/im-yeobi/TIL/blob/master/AWS/aws.md)
+- [클라우드 컴퓨팅](https://github.com/im-yeobi/TIL/blob/master/AWS/cloud_computing.md)
 

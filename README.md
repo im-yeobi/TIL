@@ -22,3 +22,8 @@
 - [AWS란 무엇인가](https://github.com/im-yeobi/TIL/blob/master/AWS/aws.md)
 - [클라우드 컴퓨팅](https://github.com/im-yeobi/TIL/blob/master/AWS/cloud_computing.md)
 
+---
+
+### 기타
+- [책 정리](https://github.com/im-yeobi/TIL/tree/master/etc/Book)
+>- [클린 코더 (로버트 C 마틴)](https://github.com/im-yeobi/TIL/blob/master/etc/Book/Clean_Coder.md)

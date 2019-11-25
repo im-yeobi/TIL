@@ -2,7 +2,9 @@
 
 GUI에 의존하지 않고, CLI에 익숙해지자 !
 
-### Git clone
+
+
+### Clone
 
 원격 저장소로부터 복제하기
 
@@ -10,7 +12,9 @@ GUI에 의존하지 않고, CLI에 익숙해지자 !
 git clone https://github.com/name/repository
 ```
 
-### Git log
+
+
+### Log
 
 커밋 이력 한 줄씩 보기
 
@@ -31,4 +35,26 @@ git log --graph
 ```
 
 
+
+### Reset
+
+변경사항은 stage 상태로 유지하고 커밋 되돌리기 (soft)
+
+```shell
+git reset --soft [commit id]
+```
+
+변경사항 unstage 상태로 유지하고 커밋 되돌리기 (mixed)
+
+--mixed 옵션은 default 설정이다
+
+```shell
+git reset [commit id]
+```
+
+변경사항와 커밋 모두 되돌리기 (hard)
+
+```shell
+git reset --hard [commit id]
+```
 

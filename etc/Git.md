@@ -58,3 +58,41 @@ git reset [commit id]
 git reset --hard [commit id]
 ```
 
+
+
+### Stash
+
+stash 저장
+
+```shell
+git stash
+// -u 옵션 사용해서 untracked 파일도 함께 저장
+git stash -u
+```
+
+stash 목록 보기
+
+```shell
+git stash list
+```
+
+stash 적용하기
+
+```shell
+// 가장 최근의 stash 적용
+git stash apply
+// 특정 stash 적용
+git stash apply [stash 이름]
+```
+
+stash 삭제하기
+
+```shell
+// 가장 최근의 stash 삭제
+git stash drop 
+// 특정 stash 삭제
+git stash drop [stash 이름]
+// 모든 stash 삭제
+git stash clear
+```
+

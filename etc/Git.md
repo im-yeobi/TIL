@@ -110,6 +110,8 @@ stash 저장
 git stash
 // -u 옵션 사용해서 untracked 파일도 함께 저장
 git stash -u
+// stash 설명 추가
+git stash save "설명"
 ```
 
 stash 목록 보기
@@ -137,4 +139,88 @@ git stash drop [stash 이름]
 // 모든 stash 삭제
 git stash clear
 ```
+
+
+
+### Branch
+
+branch 목록 보기
+
+```shell
+git branch
+```
+
+branch 생성 & 체크아웃
+
+```shell
+git checkout -b [branch 이름]
+```
+
+branch 이름 변경하기
+
+```shell
+git branch -m [new branch 이름]
+```
+
+로컬 branch 삭제하기
+
+```shell
+// --delete 옵션
+git branch -d [branch 이름]
+// --delete --force 옵션
+git branch -D [branch 이름]
+```
+
+원격 branch 삭제하기
+
+```shell
+git push [remote 이름] --delete [branch 이름]
+git push [remote 이름] :[branch 이름]
+```
+
+
+
+### Fetch 
+
+모든 원격 저장소로 부터 가져오기
+
+```shell
+git fetch --all
+```
+
+
+
+### Remote
+
+원격 저장소 목록 보기
+
+```shell
+git remote -v
+```
+
+
+
+### Merge
+
+특정 branch의 최신 커밋까지 병합하기
+
+```shell
+git merge [branch 이름]
+```
+
+특정 branch의 지정한 커밋까지 병합하기
+
+```shell
+git merge [branch 이름] [commit id]
+```
+
+옵션
+
+```shell
+--ff : fast-forward 가능한 경우(충돌 없을 때) merge 커밋 없이 병합 => default
+--no-ff : no fast-forward. merge 커밋 생성
+--no-commit : 자동 병합 커밋을 생성하지 않음. 커밋 메시지 직접 입력
+```
+
+
 

@@ -224,3 +224,28 @@ git merge [branch 이름] [commit id]
 
 
 
+### Commit
+
+직전 커밋 메시지 변경
+
+```shell
+git commit --amend
+```
+
+이전 커밋 메시지 변경
+
+```shell
+// HEAD ~ n 커밋 이력 보기
+git push -i HEAD~n
+// 아래와 같이 커밋 이력이 보이면
+// [before]
+// pick afeq151 ✂️ Delete
+// pick f135456 💡 Add
+// pick gtg4151 ✈️ Update
+// 변경하고자 하는 커밋 이력의 메시지를 변경한 후, pick => reword 로 변경한다.
+// [after]
+// reword afeq151 ✈️ Update
+// pick f135456 💡 Add
+// pick gtg4151 ✈️ Update
+```
+

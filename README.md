@@ -33,9 +33,21 @@
 
 ---
 
-### 기타
-- [책 정리](https://github.com/im-yeobi/TIL/tree/master/etc/Book)
->- [클린 코더 (로버트 C 마틴)](https://github.com/im-yeobi/TIL/blob/master/etc/Book/Clean_Coder.md)
+### 5. [네트워크](https://github.com/im-yeobi/TIL/tree/master/Network)
 
-- [DNS](https://github.com/im-yeobi/TIL/blob/master/etc/DNS.md)
-- [자주쓰는 Git 명령어 정리](https://github.com/im-yeobi/TIL/blob/master/etc/Git.md)
+- [DNS](https://github.com/im-yeobi/TIL/blob/master/Network/DNS.md)
+
+- [쿠키와 세션](https://github.com/im-yeobi/TIL/blob/master/Network/Cookie_Session.md)
+
+---
+
+### 6. [Git](https://github.com/im-yeobi/TIL/tree/master/Git)
+
+- [자주 쓰는 Git 명령어 정리](https://github.com/im-yeobi/TIL/blob/master/Git/Git.md)
+
+---
+
+### 7. [책](https://github.com/im-yeobi/TIL/tree/master/Book)
+
+- [클린 코더 (로버트 C 마틴)](https://github.com/im-yeobi/TIL/blob/master/Book/Clean_Coder.md)
+

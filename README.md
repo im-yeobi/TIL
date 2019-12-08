@@ -6,9 +6,10 @@
 ## Contents
 
 ### 1. [Java](https://github.com/im-yeobi/TIL/tree/master/Java)
-- [자바의 정석](https://github.com/im-yeobi/TIL/tree/master/Java/Book/Standard_of_Java)
->- [객체지향 프로그래밍 1](https://github.com/im-yeobi/TIL/blob/master/Java/Book/Standard_of_Java/Ch06_oop_1.md)
->- [객체지향 프로그래밍 2](https://github.com/im-yeobi/TIL/blob/master/Java/Book/Standard_of_Java/Ch07_oop_2.md)
+- [자바의 정석](https://github.com/im-yeobi/TIL/tree/master/Java/Book/Java의_정석)
+>- [Chapter 01. 자바를 시작하기 전에](https://github.com/im-yeobi/TIL/blob/master/Java/Book/Java의_정석/Ch01_자바를_시작하기_전에.md)
+>- [Chapter 06. 객체지향 프로그래밍 1](https://github.com/im-yeobi/TIL/blob/master/Java/Book/Standard_of_Java/Ch06_oop_1.md)
+>- [Chapter 07. 객체지향 프로그래밍 2](https://github.com/im-yeobi/TIL/blob/master/Java/Book/Standard_of_Java/Ch07_oop_2.md)
 
 ---
 

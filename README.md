@@ -6,18 +6,18 @@
 ## Contents
 
 ### 1. [Java](https://github.com/im-yeobi/TIL/tree/master/Java)
-- [자바의 정석](https://github.com/im-yeobi/TIL/tree/master/Java/Book/Java의_정석)
->- [Chapter 01. 자바를 시작하기 전에](https://github.com/im-yeobi/TIL/blob/master/Java/Book/Java의_정석/Ch01_자바를_시작하기_전에.md)
->- [Chapter 06. 객체지향 프로그래밍 1](https://github.com/im-yeobi/TIL/blob/master/Java/Book/Standard_of_Java/Ch06_oop_1.md)
->- [Chapter 07. 객체지향 프로그래밍 2](https://github.com/im-yeobi/TIL/blob/master/Java/Book/Standard_of_Java/Ch07_oop_2.md)
+- [자바의 정석](https://github.com/im-yeobi/TIL/tree/master/Java/book/Standard-of-Java)
+>- [Chapter 01. 자바를 시작하기 전에](https://github.com/im-yeobi/TIL/blob/master/Java/book/Standard-of-Java/Ch01_before_start_java.md)
+>- [Chapter 06. 객체지향 프로그래밍 1](https://github.com/im-yeobi/TIL/blob/master/Java/book/Standard-of-Java/Ch06_oop_1.md)
+>- [Chapter 07. 객체지향 프로그래밍 2](https://github.com/im-yeobi/TIL/blob/master/Java/book/Standard-of-Java/Ch07_oop_2.md)
 
 ---
 
-### 2. [디자인 패턴](https://github.com/im-yeobi/TIL/tree/master/Design_Pattern)
+### 2. [디자인 패턴](https://github.com/im-yeobi/TIL/tree/master/Design-Pattern)
 
-- [Head First Design Patterns ](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=582754)
+- [Head First Design Patterns](https://github.com/im-yeobi/TIL/tree/master/Design-Pattern/book/Head-First-Design-Patterns)
 
-> - [팩토리 메소드 패턴](https://github.com/im-yeobi/TIL/blob/master/Design_Pattern/Book/Head_First_Design_Patterns/Factory_method_pattern.md)
+> - [팩토리 메소드 패턴](https://github.com/im-yeobi/TIL/blob/master/Design-Pattern/book/Head-First-Design-Patterns/factory_method_pattern.md)
 
 ---
 

@@ -22,7 +22,7 @@
 >
 > 넓은 의미에서 `컴퓨터 기술 자원을 개발 및 사용하는 모든 활동`을 가리키기도 한다.
 >
-> ![cloud computing](./asset/01_cloud_computing.png)
+> ![cloud computing](./assets/01_cloud_computing.png)
 >
 > \- [위키백과]([https://ko.wikipedia.org/wiki/%EC%BB%B4%ED%93%A8%ED%8C%85](https://ko.wikipedia.org/wiki/컴퓨팅)) \-
 

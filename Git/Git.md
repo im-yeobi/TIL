@@ -232,11 +232,14 @@ git merge [branch 이름] [commit id]
 git commit --amend
 ```
 
-이전 커밋 메시지 변경
+이전 커밋 변경
+
+- reword : 커밋 메시지만 변경
+- edit : 커밋 메시지와 커밋 파일 변경
 
 ```shell
 // HEAD ~ n 커밋 이력 보기
-git push -i HEAD~n
+git rebase -i HEAD~n
 // 아래와 같이 커밋 이력이 보이면
 // [before]
 // pick afeq151 ✂️ Delete

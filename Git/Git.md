@@ -3,15 +3,13 @@
 GUI에 의존하지 않고, CLI에 익숙해지자 !
 
 
-
 ### Clone
 
 원격 저장소로부터 복제하기
 
 ```shell
-git clone https://github.com/name/repository
+$ git clone https://github.com/name/repository
 ```
-
 
 
 ### Log
@@ -19,21 +17,20 @@ git clone https://github.com/name/repository
 커밋 이력 한 줄씩 보기
 
 ```shell
-git log --oneline
+$ git log --oneline
 ```
 
 커밋 이력 한 줄씩 그래프 형식으로 보기
 
 ```shell
-git log --oneline --graph
+$ git log --oneline --graph
 ```
 
 커밋 이력 설명 포함하여 그래프 형식으로 보기
 
 ```shell
-git log --graph
+$ git log --graph
 ```
-
 
 
 ### Status
@@ -41,9 +38,8 @@ git log --graph
 파일의 상태 확인하기 (untracked, unmodified, modified, staged)
 
 ```shell
-git status
+$ git status
 ```
-
 
 
 ### Diff
@@ -51,12 +47,11 @@ git status
 staging area에 있는 파일과 unstaged에 있는 파일을 비교하여 변경 부분 보기
 
 ```shell
-git diff
+$ git diff
 // staging area에 있는 파일의 변경 부분 보기
 // Git v1.6.1부터 --staged 옵션 지원, 이전에는 --cached
-git diff --staged
+$ git diff --staged
 ```
-
 
 
 ### Stage
@@ -64,18 +59,17 @@ git diff --staged
 staging area 추가하기
 
 ```shell
-git add [파일경로/파일명]
+$ git add [파일경로/파일명]
 ```
 
 add 취소하기
 
 ```shell
 // 전체 취소
-git reset
+$ git reset
 // 특정 파일 취소
-git reset [파일명]
+$ git reset [파일명]
 ```
-
 
 
 ### Reset
@@ -83,7 +77,7 @@ git reset [파일명]
 변경사항은 stage 상태로 유지하고 커밋 되돌리기 (soft)
 
 ```shell
-git reset --soft [commit id]
+$ git reset --soft [commit id]
 ```
 
 변경사항 unstage 상태로 유지하고 커밋 되돌리기 (mixed)
@@ -91,15 +85,14 @@ git reset --soft [commit id]
 --mixed 옵션은 default 설정이다
 
 ```shell
-git reset [commit id]
+$ git reset [commit id]
 ```
 
 변경사항와 커밋 모두 되돌리기 (hard)
 
 ```shell
-git reset --hard [commit id]
+$ git reset --hard [commit id]
 ```
-
 
 
 ### Stash
@@ -107,39 +100,38 @@ git reset --hard [commit id]
 stash 저장
 
 ```shell
-git stash
+$ git stash
 // -u 옵션 사용해서 untracked 파일도 함께 저장
-git stash -u
+$ git stash -u
 // stash 설명 추가
-git stash save "설명"
+$ git stash save "설명"
 ```
 
 stash 목록 보기
 
 ```shell
-git stash list
+$ git stash list
 ```
 
 stash 적용하기
 
 ```shell
 // 가장 최근의 stash 적용
-git stash apply
+$ git stash apply
 // 특정 stash 적용
-git stash apply [stash 이름]
+$ git stash apply [stash 이름]
 ```
 
 stash 삭제하기
 
 ```shell
 // 가장 최근의 stash 삭제
-git stash drop 
+$ git stash drop 
 // 특정 stash 삭제
-git stash drop [stash 이름]
+$ git stash drop [stash 이름]
 // 모든 stash 삭제
-git stash clear
+$ git stash clear
 ```
-
 
 
 ### Branch
@@ -147,37 +139,36 @@ git stash clear
 branch 목록 보기
 
 ```shell
-git branch
+$ git branch
 ```
 
 branch 생성 & 체크아웃
 
 ```shell
-git checkout -b [branch 이름]
+$ git checkout -b [branch 이름]
 ```
 
 branch 이름 변경하기
 
 ```shell
-git branch -m [new branch 이름]
+$ git branch -m [new branch 이름]
 ```
 
 로컬 branch 삭제하기
 
 ```shell
 // --delete 옵션
-git branch -d [branch 이름]
+$ git branch -d [branch 이름]
 // --delete --force 옵션
-git branch -D [branch 이름]
+$ git branch -D [branch 이름]
 ```
 
 원격 branch 삭제하기
 
 ```shell
-git push [remote 이름] --delete [branch 이름]
-git push [remote 이름] :[branch 이름]
+$ git push [remote 이름] --delete [branch 이름]
+$ git push [remote 이름] :[branch 이름]
 ```
-
 
 
 ### Fetch 
@@ -185,9 +176,8 @@ git push [remote 이름] :[branch 이름]
 모든 원격 저장소로 부터 가져오기
 
 ```shell
-git fetch --all
+$ git fetch --all
 ```
-
 
 
 ### Remote
@@ -195,9 +185,8 @@ git fetch --all
 원격 저장소 목록 보기
 
 ```shell
-git remote -v
+$ git remote -v
 ```
-
 
 
 ### Merge
@@ -205,13 +194,13 @@ git remote -v
 특정 branch의 최신 커밋까지 병합하기
 
 ```shell
-git merge [branch 이름]
+$ git merge [branch 이름]
 ```
 
 특정 branch의 지정한 커밋까지 병합하기
 
 ```shell
-git merge [branch 이름] [commit id]
+$ git merge [branch 이름] [commit id]
 ```
 
 옵션
@@ -223,13 +212,12 @@ git merge [branch 이름] [commit id]
 ```
 
 
-
 ### Commit
 
 직전 커밋 메시지 변경
 
 ```shell
-git commit --amend
+$ git commit --amend
 ```
 
 이전 커밋 변경
@@ -239,7 +227,7 @@ git commit --amend
 
 ```shell
 // HEAD ~ n 커밋 이력 보기
-git rebase -i HEAD~n
+$ git rebase -i HEAD~n
 // 아래와 같이 커밋 이력이 보이면
 // [before]
 // pick afeq151 ✂️ Delete
@@ -252,3 +240,23 @@ git rebase -i HEAD~n
 // pick gtg4151 ✈️ Update
 ```
 
+
+### Clean
+
+untracked 파일 삭제하기
+
+```shell
+$ git clean -f
+```
+
+untracked 파일, 디렉토리까지 삭제하기
+
+```shell
+$ git clean -fd
+```
+
+untracked 파일 중 지워질 파일 미리 확인하기
+
+```shell
+$ git clean -fd --dry-run
+```

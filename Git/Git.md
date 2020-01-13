@@ -95,6 +95,34 @@ $ git reset --hard [commit id]
 ```
 
 
+### Revert
+
+이전 커밋을 되돌리고, 이를 새로운 커밋으로 기록한다.
+
+```shell
+$ git revert [commit id]
+```
+
+merge 커밋을 되돌리고, 이를 새로운 커밋으로 기록한다.
+
+```shell
+*   commit 46469321a42d80f6722192cc8a4a1163aea2faef
+|\  Merge 3edf3cd c152e0c
+| | 
+| * commit c152e0cf0ecfb6471df48a9a09d9e2d82623c99c
+| | 
+| * commit 040ece90367e2f407ff31d1b573102b910fbe336
+|/
+* commit 3edf3cd7d321854234b0c97975bdaa24574aff18
+|
+
+// 3edf3cd 상태로 되돌리기
+$ git revert 4646932 -m 1
+// c152e0c 상태로 되돌리기
+$ git revert 4646932 -m 2
+```
+
+
 ### Stash
 
 stash 저장

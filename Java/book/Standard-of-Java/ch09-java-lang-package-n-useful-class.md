@@ -323,3 +323,81 @@ s.equals(s2);  ==> true
 StringBuffer는 멀티스레드에 안전(thread safe)하도록 동기화 되어 있다. 멀티스레드로 작성된 프로그램이 아닌 경우, StringBuffer의 동기화는 불필요하게 성능만 떨어뜨리게 된다.
 
 StringBuilder는 StringBuffer에서 스레드의 동기화만 뺀 클래스이다. StringBuilder와 StringBuffer는 완전히 똑같은 기능으로 작성되어 있다.
+
+### 1.4 Math 클래스
+
+Math 클래스는 기본적인 수학 계산에 유용한 메서드로 구성되어 있다.
+
+Math 클래스의 생성자는 접근제어자가 모두 private이기 때문에 다른 클래스에서 Math 인스턴스 생성할 수 없다. Math 클래스 내에 인스턴스 변수가 하나도 없어서 인스턴스를 생성할 필요가 없기 때문. 메서드 모두 static
+
+- round() — 소수점 첫 째 자리에서 반올림
+- rint() — 소수점 첫 째 자리에서 반올림. 반환값이 double. `음수일 때, 소수점 첫 째 자리가 5 미만일 때 반올림한다.` 주어진 double 값과 가장 가까운 정수값을 double형으로 반환한다.
+- ceil() — 올림 (-1.5를 올림하면 -1.0이 된다)
+- floor() — 버림. (-1.5를 버림하면 -2.0이 된다)
+
+#### 예외를 발생시키는 메서드
+
+메서드에 'Exact'가 포함된 메서드들은 정수형 간의 연산에서 발생할 수 있는 오버플로우(overflow)를 감지하기 위한 것이다.
+
+#### 삼각함수와 지수, 로그
+
+- sqrt() — 제곱근 계산
+- pow() — n제곱 계산
+
+#### StrictMath 클래스
+
+Math 클래스는 최대한의 성능을 내기 위해 JVM이 설치된 OS의 메서드를 호출해서 사용한다. OS에 의존적인 계산을 한다. 컴퓨터마다 결과 다를 수 있다.
+
+어떤 OS에서 실행되어도 항상 같은 결과를 얻도록 Math 클래스를 새로 작성한 것이 StrictMath 클래스이다.
+
+### 1.5 래퍼(wrapper) 클래스
+
+래퍼 클래스를 이용해 8개의 기본형을 객체로 다룰 수 있다.
+
+```java
+public final class Integer extends Number implements Comparable {
+	...
+	private int value;
+	...
+}
+```
+
+언제 쓰는가 ?
+
+- 매개변수로 객체를 요구하는 경우, 기본형 값이 아닌 객체로 저장할 때, 객체 간의 비교가 필요할 때 등
+
+Integer 객체에 비교연산자 사용할 수 없다. comapreTo() 메서드 제공
+
+```java
+A.compareTo(B)
+
+A == B ==> return 0
+A < B ==> return -1
+A > B ==> return 1
+```
+
+Integer.SIZE() — int형 bit
+
+Integer.BYTES() — int형 byte
+
+#### Number 클래스
+
+추상 클래스로 래퍼 클래스들의 조상이다. 기본형 중에서 숫자와 관련된 래퍼 클래스들은 모두 Number 클래스의 자손이다.
+
+![Number 클래스](../../assets/006-number-class.jpg)
+
+#### 문자열을 숫자로 변환하기
+
+```java
+int i = new Integer("100").intValue();
+int i2 = Integer.parseInt("100");
+Integer t3 = Integer.valueOf("100");
+```
+
+parseInt()와 valueOf()의 차이는 `반환 타입이 기본형이냐 래퍼 클래스 타입이냐` 이다. `성능은 valueOf()가 조금 더 느리다.` Java 5부터 `오토박싱(autoboxing)` 기능 도입. 반환형 기본형/래퍼 클래스 차이 없다.
+
+```java
+다른 진법(radix)의 숫자 변환
+static int parseInt(String s, int radix);
+static Integer valueOf(String s, int radix);
+```

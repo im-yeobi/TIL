@@ -157,3 +157,169 @@ Card c = Class.class.newInstance();  // Class 객체를 이용해서 객체 생�
 reflection API — 동적으로 객체 생성하고 메서드 호출하는 방법
 
 Class 클래스 — 클래스의 정보를 얻을 수 있는 많은 수의 메서드 정의되어 있다.
+
+### 1.2 String 클래스
+
+기존의 다른 언어에서는 문자열을 char 형의 배열로 다루었으나 자바에서는 문자열을 위한 클래스를 제공한다. String은 문자열을 저장하고 다루는데 필요한 메서드를 제공한다.
+
+#### 변경 불가능한(immutable) 클래스
+
+String 클래스에서는 문자열을 저장하기 위해서 문자형 배열 변수(char[]) value를 인스턴스 변수로 저장해놓고 있다.
+
+```java
+public final class String implements Serializable, Comparable {
+	private char[] value;
+
+	// ...
+}
+```
+
+한번 생성된 String 인스턴스가 갖고 있는 문자열은 읽어 올 수만 있고, 변경할 수는 없다.
+
+'+' 연산자를 이용해서 문자열을 결합하는 경우 `인스턴스 내의 문자열이 바뀌는 것이 아니라 새로운 문자열("ab")이 담긴 String 인스턴스가 생성`되는 것이다.
+
+![String 클래스 인스턴스](../../assets/004-string-class-instance.png)
+
+덧셈 연산자 '+'를 사용해서 문자열을 결합하는 것은 `매 연산 시 마다 새로운 문자열을 가진 String 인스턴스가 생성되어 메모리 공간을 차지`하게 되므로 가능한 한 결합 횟수를 줄이는 것이 좋다.
+
+#### 문자열의 비교
+
+```java
+문자열의 만드는 방법
+
+// i. 문자열 리터럴을 지정하는 방법
+String str1 = "abc";  // 문자열 리터럴 "abc"의 주소가 str1에 저장됨
+
+// ii. String 클래스의 생성자를 이용해서 만드는 방법
+String str2 = new String("abc");  // 새로운 String 인스턴스를 생성
+```
+
+문자열 리터럴은 `이미 존재하는 인스턴스를 재사용`한다. (문자열 리터럴은 클래스가 메모리에 로드될 때 자동적으로 미리 생성된다.)
+
+String 클래스의 생성자를 이용한 경우에는 `new 연산자에 의해서 메모리 할당이 이루어지기 때문에 항상 새로운 String 인스턴스가 생성`된다.
+
+![String 클래스 비교](../../assets/005-string-class-compare.jpg)
+
+<왼쪽 : 인스턴스 재사용, 오른쪽 : 새로운 인스턴스 생성>
+
+equals()를 사용했을 때는 두 `문자열의 내용을 비교`
+
+등가비교연산자 '=='로 비교했을 때는 `인스턴스의 주소를 비교`
+
+```java
+// 문자열 리터럴
+str1 == str2;  // true. 같은 인스턴스
+str1.equals(str2);  // true
+
+// String 인스턴스
+str3 = new String("abc");
+str4 = new String("abc");
+str3 == str4;  // false. 다른 인스턴스
+str3.equals(str4);  // true
+```
+
+#### 문자열 리터럴
+
+자바 소스 파일에 포함된 모든 문자열 리터럴은 컴파일 시에 클래스 파일에 저장된다. 같은 내용의 문자열 리터럴을 한번만 저장된다. 문자열 리터럴도 String 인스턴스이고, `한번 생성하면 내용을 변경할 수 없으니 하나의 인스턴스만 공유`하면 되기 때문이다.
+
+문자열 리터럴이 저장된 클래스 파일이 클래스 로더에 의해 메모리에 올라갈 때, 이 리터럴의 목록에 있는 리터럴들이 JVM 내에 있는 `상수 저장소(constant pool)`에 저장된다.
+
+#### 빈 문자열(empty string)
+
+길이가 0인 배열 존재 가능.
+
+```java
+String s = "";
+
+내부적으로는 new char[0]과 같이 길이가 0인 char형 배열 저장하고 있다.
+
+char c = '';  // 불가능하다.
+
+자바에서 String과 char 형의 초기화
+String s = "";  // 빈 문자열로 초기화
+char c = ' ';  // 공백으로 초기화
+```
+
+#### join()과 StringJoiner
+
+join()은 여러 문자열 사이에 구분자를 넣어서 결합한다. split()과 반대
+
+```java
+String animal = "dog,cat,bear";
+String[] arr = animal.split(",");
+String str = String.join("0", arr);
+System.out.println(str);  // dog-cat-bear
+```
+
+java.util.StringJoiner 클래스
+
+```java
+StringJoiner sj = new StringJoiner(",", "[", "]");
+String[] strArr = [ "aaa", "bbb", "ccc" ];
+
+for (String s : strArr) {
+	sj.add(s.toUpperCase());
+}
+
+System.out.println(sj.toString());  // [AAA,BBB,CCC]
+```
+
+### 1.3 StringBuffer 클래스와 StringBuilder 클래스
+
+String 클래스는 인스턴스를 생성할 때 지정된 문자열을 변경할 수 없지만 `StringBuffer 클래스는 변경이 가능하다`.
+
+```java
+public final class StringBuffer implements java.io.Serializable {
+	private char[] value;
+	// ...
+}
+```
+
+#### StringBuffer 생성자
+
+StringBuffer 클래스의 인스턴스를 생성할 때, 적절한 길이의 char형 배열이 생성되고, 이 배열은 문자열을 저장하고 편집하기 위한 `공간(buffer)`으로 사용된다.
+
+StringBuffer(int length) 를 사용해서 StringBuffer 인스턴스에 저장될 문자열의 길이를 고려하여 충분히 여유있는 크기로 지정하는 것이 좋다. `버퍼의 크기를 지정해주지 않으면 16개의 문자를 저장할 수 있는 크기의 버퍼`를 생성한다.
+
+```java
+public StringBuffer(int length) {
+	value = new char[length];
+	shared = false;
+}
+
+public StringBuffer() {
+	this(16);  // 버퍼의 크기를 지정하지 않으면 버퍼의 크기는 16이 된다.
+}
+
+public StringBuffer(String str) {
+	this(str.length() + 16);  // 지정한 문자열의 길이보다 16이 더 크게 버퍼를 생성한다.
+	append(str);
+}
+```
+
+버퍼의 크기가 작업하려는 문자열의 길이보다 작을 때는 `내부적으로 버퍼의 크기를 증가시키는 작업이 수행`된다.
+
+#### StringBuffer 비교
+
+StringBuffer 클래스는 `equals 메서드를 오버라이딩 하지 않아서` StringBuffer 클래스의 equals 메서드를 사용해도 등가비교연산자(==)로 비교한 것과 같은 결과를 얻는다.
+
+```java
+StringBuffer sb = new StringBuffer("abc");
+StringBuffer sb2 = new StringBuffer("abc");
+
+sb == sb2; ==> false
+sb.equals(sb2); ==> false
+
+StringBuffer 클래스의 문자열 비교 방법
+
+String s = sb.toString();
+String s2 = sb2.toString();
+
+s.equals(s2);  ==> true
+```
+
+#### StringBuilder 란
+
+StringBuffer는 멀티스레드에 안전(thread safe)하도록 동기화 되어 있다. 멀티스레드로 작성된 프로그램이 아닌 경우, StringBuffer의 동기화는 불필요하게 성능만 떨어뜨리게 된다.
+
+StringBuilder는 StringBuffer에서 스레드의 동기화만 뺀 클래스이다. StringBuilder와 StringBuffer는 완전히 똑같은 기능으로 작성되어 있다.

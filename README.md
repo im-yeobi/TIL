@@ -12,6 +12,7 @@
 >- [Chapter 06. 객체지향 프로그래밍 1](https://github.com/im-yeobi/TIL/blob/master/Java/book/Standard-of-Java/Ch06_oop_1.md)
 >- [Chapter 07. 객체지향 프로그래밍 2](https://github.com/im-yeobi/TIL/blob/master/Java/book/Standard-of-Java/Ch07_oop_2.md)
 >- [Chapter 08. 예외처리(exception handling)](https://github.com/im-yeobi/TIL/blob/master/Java/book/Standard-of-Java/ch08-exception-handling.md)
+>- [Chapter 09. java.lang 패키지와 유용한 클래스](https://github.com/im-yeobi/TIL/blob/master/Java/book/Standard-of-Java/ch09-java-lang-package-n-useful-class.md)
 
 ---
 
@@ -54,7 +55,7 @@
 
 ---
 
-### [Node](https://github.com/im-yeobi/TIL/tree/master/Node)
+### [Nodejs](https://github.com/im-yeobi/TIL/tree/master/Node)
 
 - [Mac에 Node 설치하기](https://github.com/im-yeobi/TIL/blob/master/Node/node-install.md)
 

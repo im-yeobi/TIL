@@ -401,3 +401,57 @@ parseInt()와 valueOf()의 차이는 `반환 타입이 기본형이냐 래퍼 �
 static int parseInt(String s, int radix);
 static Integer valueOf(String s, int radix);
 ```
+
+#### 오토박싱 & 언박싱 (autoboxing & unboxing)
+
+컴파일러가 자동으로 변환해주는 코드를 넣어준다.
+
+```java
+// 컴파일 전의 코드
+int i = t;
+Integer iObj = new Integer(7);
+int sum = t + iObj;
+
+// 컴파일 후의 코드
+int i = t;
+Integer iObj = new Integer(7);
+int sum = t + iObj.intValue();
+```
+
+오토박싱 — 기본형 값을 래퍼 클래스의 객체로 자동 변환해주는 것.
+
+언박싱 — 래퍼 클래스의 객체를 기본형 값으로 변환해주는 것.
+
+
+### 2. 유용한 클래스
+
+### 2.1 java.util.Objects 클래스
+
+Objects 클래스는 Object 클래스의 보조 클래스로 모든 메서드가 static. 객체의 비교 나 널 체크(null check)에 유용하다.
+
+```java
+static boolean isNull(Object obj)
+static boolean nonNull(Object obj)
+static <T> requireNonNull(T obj)  // NullPointerException 처리
+static int compare(Object a, Object b, Comparator c)  // 대소비교
+static boolean equals(Object a, Object b)  // null 확인 불필요 
+static boolean deepEquals(Object a, Object b)  // 객체 재귀적 비교
+```
+
+### java.util.Random 클래스
+
+Math.random()은 내부적으로 Random 클래스의 인스턴스를 생성해서 사용한다.
+
+`Math.random()과 Random()의 가장 큰 차이는 seed를 설정할 수 있다는 것`이다. seed 값이 같은 Random 인스턴스들은 항상 같은 난수를 같은 순서대로 반환한다.
+
+### Random 클래스의 생성자와 인스턴스
+
+생성자 Random()은 seed 값을 System.currentTimeMillis()로 하기 때문에 실행할 때마다 얻는 난수가 달라진다.
+
+```java
+public Random() {
+	this(System.currentTimeMillis());
+}
+```
+
+같은 seed 값을 갖는 Random 인스턴스는 시스템이나 실행 시간 등에 관계없이 항상 같은 값을 같은 순서로 반환할 것을 보장한다.

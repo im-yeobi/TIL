@@ -455,3 +455,22 @@ public Random() {
 ```
 
 같은 seed 값을 갖는 Random 인스턴스는 시스템이나 실행 시간 등에 관계없이 항상 같은 값을 같은 순서로 반환할 것을 보장한다.
+
+### 2.3 정규식 (Regular Expression) - java.util.regex 패키지
+
+정규식이란 텍스트 데이터 중에서 원하는 조건(패턴)과 일치하는 문자열을 찾아내기 위해 사용하는 것으로 `미리 정의된 기호와 문자를 이용해서 작성한 문자열`을 말한다.
+
+### 2.4 java.util.Scanner 클래스
+
+화면, 파일, 문자열과 같은 입력 소스로부터 문자 데이터를 읽어오는 목적으로 사용된다.
+
+```java
+boolean  nextBoolean()
+byte     nextByte()
+short    nextShort()
+int      nextInt()
+long     nextLong()
+double   nextDouble()
+float    nextFloat()
+String   nextLine()
+```

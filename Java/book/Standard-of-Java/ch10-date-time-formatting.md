@@ -142,3 +142,170 @@ Object[] obj = sf.parse(data[0]);
 // 출력
 '이자바', '010', 27, '01-01'
 ```
+
+
+## 3. java.time 패키지
+
+Java 8 부터 java.time 패키지 추가
+
+기존 Calendar 클래스는 변경 가능하므로 멀티 스레드 환경에서 안전하지 못하다. 멀티 스레드 환경에서는 동시에 여러 스레드가 같은 객체에 접근할 수 있기 때문에, 변경 가능한 객체는 데이터가 잘못될 가능성이 있다. (`thread-saf`)
+
+### 3.1 java.time 패키지의 핵심 클래스
+
+java.time 패키지에서는 날짜와 시간을 별도의 클래스로 분리
+
+시간 표현 — LocalTime 클래스
+
+날짜 표현 — LocalDate 클래스
+
+날짜와 시간 모두 표현 — LocalDateTime 클래스
+
+날짜와 시간을 초단위로 표현한 값을 `타임스탬프(time-stamp)`라고 한다. `타임스탬프는 날짜와 시간을 하나의 정수로 표현할 수 있으므로 날짜와 시간의 차이를 계산하거나 순서를 비교하는 데 유리해서 데이터베이스에 많이 사용된다.`
+
+#### Period와 Duration
+
+Period — 두 날짜간의 차이를 표현
+
+Duration — 시간의 차이를 표현
+
+```java
+날짜 - 날짜 = Period
+시간 - 시간 = Duration
+```
+
+객체 생성하기 — now(), of()
+
+java.time 패키지에 속한 클래스의 객체를 생성하는 가장 기본적인 방법은 now()와 of()를 사용하는 것이다.
+
+now() — 현재 날짜와 시간을 저장하는 객체를 생성한다.
+
+```java
+LocalDate date = LocalDate.now();  // 2020-01-23
+LocalTime time = LocalTime.now();  // 20:12:01.424
+LocalDateTime dateTime = LocalDateTime.now();  // 2020-01-23T20:12:01.424
+ZonedDateTime dateTimeInKr = ZonedDateTime.now();  // 2020-01-23T20:12:01.424+09:00[Asia/Seoul]
+```
+
+of() — 해당 필드의 값을 순서대로 지정
+
+```java
+LocalDate date = LocalDate.of(2020, 1, 23);  // 2020년 01월 23일
+LocalTime time = LocalTime.of(23, 59, 59);  // 23시 59분 59초
+LocalDateTime dateTime = LocalDateTime.of(date, time);
+ZonedDateTime zDateTime = ZonedDateTime.of(dateTime, ZoneId.of("Asia/Seoul"));
+```
+
+#### Temporal과 TemporalAmount
+
+```java 
+Temporal, TemporalAccessor, TemporalAdjuster를 구현한 클래스
+  - LocalDate, LocalTime, LocalDateTime, ZonedDateTime, Instant 등
+
+TemporalAmount를 구현한 클래스
+  - Period, Duration
+```
+
+### 3.2 LocalDate와 LocalTime
+
+LocalDate와 LocalTime은 java.time 패키지의 가장 기본이 되는 클래스이다.
+
+```java
+LocalDate birthDate = LocalDate.parse("1999-12-31");
+LocalTime birthTime = LocalTime.parse("23:59:59");
+```
+
+#### 특정 필드의 값 가져오기 — get(), getXXX()
+
+월요일 : 1, 일요일 : 7
+
+1월 : 1, 12월: 12
+
+#### 필드의 값 변경하기 — with(), plus(), minus()
+
+with()를 사용하면, 원하는 필드를 직접 지정할 수 있다.
+
+필드를 변경하는 메서드들은 `항상 새로운 객체를 생성해서 반환`하므로 아래와 같이 대입 연산자를 같이 사용해야 한다.
+
+#### 날짜와 시간의 비교 — isAfter(), isBefore(), isEqual()
+
+LocalDate와 LocalTime도 compareTo()가 적절히 오버라이딩 되어 있어서 비교 가능하다.
+
+```java
+// 보다 편리하게 비교할 수 있는 메서드 추가
+
+boolean isAfter(ChronoLocalDate other)
+boolean isBefore(ChronoLocalDate other)
+boolean isEqual(ChronoLocalDate other)
+```
+
+isEqual()과 equals()의 차이
+
+- isEqual() 연표(chronology)가 다른 두 날 짜 비교. 오직 날짜만 비교
+- equals() 모든 필드 일치하는지 비교
+
+### 3.3 Instant
+
+Instant는 에포크 타임(EPOCH TIME, 1970-01-01 00:00:00 UTC)부터 경과된 시간을 나노초 단위로 표현한다.
+
+UTC는 'Coordinated Universal Time'의 약어로 '세계 협정시'라고 한다. 1972년 1월 1일부터 시행된 국제 표준시이다.
+
+#### Instant와 Date 간의 변환
+
+Java 8부터 Date에 Instant로 변환할 수 있는 메서드 추가
+
+```java
+static Date from(Instant instant);  // Instant => Date
+Instant toInstant();  // Date => Instant
+```
+
+### 3.4 LocalDateTime과 ZonedDateTime
+
+LocalDateTime에 시간대(time zone)을 추가한 것이 ZonedDateTime이다.
+
+```java
+LocalDate + LocalTime = LocalDateTime
+LocalDateTime + 시간대 = ZonedDateTime
+```
+
+### 3.5 TemporalAdjusters
+
+자주 쓰일만한 날짜 계산들을 대신 해주는 메서드를 정의해놓은 것이 TemporalAdjusters 클래스이다.
+
+### 3.6 Period와 Duration
+
+Period는 날짜의 차이
+
+Duration은 시간의 차이
+
+```java
+날짜 - 날짜 = Period
+시간 - 시간 = Duration
+```
+
+#### between()
+
+두 날짜 date1과 date2의 차이를 나타내는 Period는 between()으로 얻을 수 있다.
+
+```
+LocalDate date1 = LocalDate.of(2019, 1, 1);
+LocalDate date2 = LocalDate.of(2020, 1, 1);
+
+Period pe = Period.between(date1, date2);
+// date1이 date2보다 날짜 상으로 이전이면 양수로, 이후면 음수로 Period에 저장된다.
+```
+
+#### until()
+
+between()과 거의 같은 일을 한다. between()은 static 메서드이고, until()은 인스턴스 메서드라는 차이가 있다.
+
+### 3.7 파싱과 포맷
+
+날짜와 시간을 원하는 형식으로 출력하고 해석(파싱, parsing).
+
+#### 출력 형식 직접 정의하기
+
+- ofPattern()으로 원하는 출력 형식 직접 작성
+
+#### 문자열을 날짜와 시간으로 파싱하기
+
+- static 메서드 parse() 사용

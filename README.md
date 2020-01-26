@@ -61,6 +61,12 @@
 
 ---
 
+### [맥 개발 환경설정](https://github.com/im-yeobi/TIL/tree/master/Mac)
+
+- [맥 터미널 꾸미기](https://github.com/im-yeobi/TIL/blob/master/Mac/mac-terminal-setting.md)
+
+---
+
 ### [책](https://github.com/im-yeobi/TIL/tree/master/Book)
 
 - [클린 코더 (로버트 C 마틴)](https://github.com/im-yeobi/TIL/blob/master/Book/Clean_Coder.md)

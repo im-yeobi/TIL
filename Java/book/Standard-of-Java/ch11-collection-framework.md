@@ -151,11 +151,12 @@ LinkedList : 20
 
 #### 스택 (Stack)
 - 마지막에 저장한 데이터를 먼저 꺼내게 되는 LIFO(Last In First Out) 구조로 되어 있다.
-- 데이터의 추가/삭제가 쉬운 LinkedList로 구현하는 것이 적합하다.
+- ArrayList로 구현하는 것이 적합하다.
 - 활용 : undo/redo, 웹브라우저의 뒤로/앞으로, 메소드 호출
 
 #### 큐 (Queue)
 - 처음에 저장한 데이터를 가장 먼저 꺼내게 되는 FIFO(First In First Out) 구조로 되어 있다.
+- 데이터의 추가/삭제가 쉬운 LinkedList로 구현하는 것이 적합하다.
 - 대기 목록
 - 버퍼(buffer), 리눅스의 history 명령, 프로그램 최근 사용 목록
 

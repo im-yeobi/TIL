@@ -216,6 +216,12 @@ $ git fetch --all
 $ git remote -v
 ```
 
+원격 저장소 등록하기
+
+```shell
+$ git remote add [원격 저장소 이름] [원격 저장소 URL]
+```
+
 
 ### Merge
 

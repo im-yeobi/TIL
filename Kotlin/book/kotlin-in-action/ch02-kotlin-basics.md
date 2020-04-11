@@ -1,4 +1,4 @@
-# [Kotlin in Action] Chapter 01. 코틀린 기초
+# [Kotlin in Action] Chapter 02. 코틀린 기초
 
 2장에서 다루는 내용
 

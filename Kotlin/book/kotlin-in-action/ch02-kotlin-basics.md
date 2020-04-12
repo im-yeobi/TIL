@@ -480,7 +480,6 @@ fun readNumber(reader: BufferedReader) {
 - 코틀린에서는 함수가 던질 수 있는 예외를 선언하지 않아도 된다.
 
 
-
 ### 참고 자료
 
 - [Kotlin in Action](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=120267010)

@@ -23,6 +23,7 @@
 - [코틀린 인 액션](https://github.com/im-yeobi/TIL/tree/master/Kotlin/book/kotlin-in-action)
    - [Chapter 01. 코틀린이란 무엇이며, 왜 필요한가?](https://github.com/im-yeobi/TIL/blob/master/Kotlin/book/kotlin-in-action/ch01-kotlin-what-and-why.md)
    - [Chapter 02. 코틀린 기초](https://github.com/im-yeobi/TIL/blob/master/Kotlin/book/kotlin-in-action/ch02-kotlin-basics.md)
+   - [Chapter 03. 함수 정의와 호출](https://github.com/im-yeobi/TIL/blob/master/Kotlin/book/kotlin-in-action/ch03-defining-and-calling-functions.md)
 
 ---
 
